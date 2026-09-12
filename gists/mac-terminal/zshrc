@@ -1,0 +1,49 @@
+export PATH="$HOME/.local/bin:$PATH"
+
+# Tab completion supplies Git branches and paths; plugins below add inline help.
+autoload -Uz compinit
+compinit
+zmodload zsh/complist
+zstyle ':completion:*' menu select
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:descriptions' format '%B%d%b'
+bindkey '^I' expand-or-complete
+
+# Git-aware prompt using Zsh's built-in version-control integration.
+autoload -Uz vcs_info add-zsh-hook
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr '+'
+zstyle ':vcs_info:git:*' unstagedstr '*'
+zstyle ':vcs_info:git:*' formats ' [%b%u%c]'
+zstyle ':vcs_info:git:*' actionformats ' [%b | %a%u%c]'
+
+_personal_update_prompt() {
+  vcs_info
+  # Escape percent signs in Git text so branch names stay literal.
+  local git_info=${vcs_info_msg_0_//\%/%%}
+  PROMPT='%F{cyan}%~%f%F{yellow}'"${git_info}"$'%f\n%F{green}❯%f '
+}
+
+# Remove our hook first so reloading this file does not duplicate it.
+add-zsh-hook -d precmd _personal_update_prompt
+add-zsh-hook precmd _personal_update_prompt
+_personal_update_prompt
+
+# Keep command history available for suggestions across terminal sessions.
+HISTFILE=${HISTFILE:-$HOME/.zsh_history}
+HISTSIZE=10000
+SAVEHIST=10000
+setopt APPEND_HISTORY HIST_IGNORE_DUPS
+
+# Inline suggestions: try history first, then fall back to completion.
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Accept the displayed suggestion with Right Arrow when at the end of the line.
+bindkey '^[[C' forward-char
+bindkey '^[OC' forward-char
+
+# Load last so command coloring can observe all other line-editor widgets.
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
