@@ -1,10 +1,19 @@
-# Development setup
+# Dev Setup
 
-Reusable configuration snippets and setup instructions for my development environment.
+A collection of scripts and gists required for different personal dev setups.
 
-## Gists
+## Structure
 
-- [macOS Terminal + Zsh](gists/mac-terminal/): Git-aware prompt, Tab completion,
-  inline autosuggestions, syntax highlighting, and persistent command history.
+- `scripts/` - Setup scripts for different environments
+- `gists/` - Code snippets and configurations
 
-These are local, version-controlled snippets; no GitHub Gist has been published.
+## Scripts
+
+- `mac_terminal_setup.sh` - Sets up macOS terminal with zsh autocomplete, syntax highlighting, and useful tools
+
+## Usage
+
+For macOS terminal setup:
+```bash
+./scripts/mac_terminal_setup.sh
+```
