@@ -1,9 +1,9 @@
-# macOS Terminal setup
+# macOS Terminal Configuration Recipe
 
 This saves the Zsh configuration used with Apple's built-in Terminal app.
 No replacement terminal app or shell framework is required.
 
-This gist provides a **minimal setup** for macOS terminal configuration.
+This recipe provides a **minimal setup** for macOS terminal configuration.
 
 **Use this when:** You have Homebrew already installed and want to set up zsh with autosuggestions and syntax highlighting.
 
@@ -28,7 +28,7 @@ Prerequisites: macOS, Zsh, and [Homebrew](https://brew.sh/) at `/opt/homebrew`.
 Review `zshrc` and `setup.sh`, then run from any directory:
 
 ```bash
-bash ~/projects/dev_setup/gists/mac-terminal/setup.sh
+bash ~/projects/dev_setup/recipes/mac-terminal/setup.sh
 ```
 
 The script installs the two plugins, backs up an existing regular `~/.zshrc` to a
@@ -64,7 +64,7 @@ Example prompt:
 
 Changes to this snapshot do not automatically change your active `~/.zshrc`.
 Keep the two in sync deliberately, reviewing any local additions before copying.
-The setup script has not been run as part of saving this gist; the current Mac
+The setup script has not been run as part of saving this recipe; the current Mac
 already has the plugins and active configuration installed.
 
 Terminal color profiles and font choices are managed separately under

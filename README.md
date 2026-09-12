@@ -1,15 +1,15 @@
 # Dev Setup
 
-A collection of scripts and gists required for different personal dev setups.
+A collection of repeatable recipes for different personal dev setups.
 
 ## Structure
 
-- `gists/` - Code snippets and configurations for different environments
+- `recipes/` - Repeatable configuration recipes for different environments
 
-## Gists
+## Recipes
 
-- `gists/mac-terminal/` - macOS terminal configuration
-  - `setup.sh` - Setup script for when Homebrew is already installed
+- `recipes/mac-terminal/` - macOS terminal configuration
+  - `setup.sh` - Setup recipe for when Homebrew is already installed
   - `zshrc` - Minimal zsh configuration file
   - `README.md` - Documentation
 
@@ -17,7 +17,7 @@ A collection of scripts and gists required for different personal dev setups.
 
 For macOS terminal setup (requires Homebrew already installed):
 ```bash
-./gists/mac-terminal/setup.sh
+./recipes/mac-terminal/setup.sh
 ```
 
 This setup installs:
