@@ -4,38 +4,26 @@ A collection of scripts and gists required for different personal dev setups.
 
 ## Structure
 
-- `scripts/` - Setup scripts for different environments
-- `gists/` - Code snippets and configurations
-
-## Scripts
-
-- `scripts/mac_terminal_setup.sh` - Comprehensive macOS terminal setup including Homebrew installation, zsh autocomplete, syntax highlighting, and many useful tools
+- `gists/` - Code snippets and configurations for different environments
 
 ## Gists
 
-- `gists/mac-terminal/` - Minimal macOS terminal configuration restore
-  - `setup.sh` - Restore-only script for when Homebrew is already installed
+- `gists/mac-terminal/` - macOS terminal configuration
+  - `setup.sh` - Setup script for when Homebrew is already installed
   - `zshrc` - Minimal zsh configuration file
   - `README.md` - Documentation
 
 ## Usage
 
-### Comprehensive Setup (Recommended for new machines)
-For a complete terminal setup including Homebrew and many tools:
-```bash
-./scripts/mac_terminal_setup.sh
-```
-
-### Minimal Restore (When you already have Homebrew)
-To restore just the zsh configuration without installing additional tools:
+For macOS terminal setup (requires Homebrew already installed):
 ```bash
 ./gists/mac-terminal/setup.sh
 ```
 
-The comprehensive script installs:
-- Homebrew (if not present)
-- zsh-autosuggestions & zsh-syntax-highlighting
-- Additional tools: fzf, z, bat, exa, htop, ripgrep, jq, tree, thefuck, starship
-- Full-featured `.zshrc` with aliases and configuration
-
-The gist version is for restoring configuration only, assuming Homebrew is already installed.
+This setup installs:
+- zsh-autosuggestions & zsh-syntax-highlighting plugins
+- Git-aware prompt with branch information
+- Tab completion with selection menu
+- Command history suggestions
+- Syntax highlighting
+- 10,000 entry command history

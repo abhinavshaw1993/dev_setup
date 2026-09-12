@@ -24,10 +24,7 @@ if [[ ! -x "$brew" ]]; then
     else
         printf '%s\n' 'Error: Homebrew not found at /opt/homebrew or /usr/local.' >&2
         echo ''
-        echo 'You have two options:'
-        echo '1. Install Homebrew first: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
-        echo '2. Use the comprehensive setup script that includes Homebrew installation:'
-        echo '   bash ~/projects/dev_setup/scripts/mac_terminal_setup.sh'
+        echo 'Install Homebrew first: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
         exit 1
     fi
 fi
@@ -102,6 +99,4 @@ echo "To activate the configuration:"
 echo "• Open a new Terminal window"
 echo "• Or run: exec zsh"
 echo ""
-echo "For a comprehensive setup with additional tools, run:"
-echo "  bash ~/projects/dev_setup/scripts/mac_terminal_setup.sh"
 echo "========================================="
