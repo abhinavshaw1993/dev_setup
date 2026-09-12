@@ -3,6 +3,13 @@
 This saves the Zsh configuration used with Apple's built-in Terminal app.
 No replacement terminal app or shell framework is required.
 
+## Difference from Comprehensive Script
+This gist provides a **minimal restore-only** setup, while the comprehensive script (`scripts/mac_terminal_setup.sh`) provides a **complete installation** including Homebrew and many additional tools.
+
+**Use this gist when:** You already have Homebrew installed and just want to restore/apply the zsh configuration.
+
+**Use the comprehensive script when:** You're setting up a new machine or want to install Homebrew along with many additional terminal utilities.
+
 ## Included
 
 - Two-line prompt: cyan working directory and green command marker.
@@ -20,6 +27,7 @@ target the standard Apple Silicon Homebrew installation at `/opt/homebrew`.
 
 ## One-time setup / restore
 
+### Minimal Setup (Restore only)
 Prerequisites: macOS, Zsh, and [Homebrew](https://brew.sh/) at `/opt/homebrew`.
 Review `zshrc` and `setup.sh`, then run from any directory:
 
@@ -33,6 +41,20 @@ It **replaces**, rather than merges, your configuration. Incorporate any custom
 aliases or other settings into the saved file before restoring it. An identical
 configuration is left in place. Custom ZDOTDIR setups and differing symlinked
 configurations require a manual merge.
+
+### Comprehensive Setup (Install + Configure)
+For a complete terminal setup including Homebrew installation and many additional
+tools, use the comprehensive script:
+
+```bash
+bash ~/projects/dev_setup/scripts/mac_terminal_setup.sh
+```
+
+This script will:
+1. Install Homebrew if not present
+2. Install numerous terminal utilities and tools
+3. Create a full-featured `.zshrc` with aliases, prompt configuration, and plugins
+4. Set up Git configuration
 
 On an Intel Mac, adjust the plugin paths and the setup script's Homebrew path to
 match your installation before using these files.
